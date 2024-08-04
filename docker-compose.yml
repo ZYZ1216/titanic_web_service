@@ -1,0 +1,32 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: backend
+    ports:
+      - "8087:8087"
+    networks:
+      - titanic-network
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: frontend
+    ports:
+      - "8088:8088"
+    networks:
+      - titanic-network
+      - outside
+  
+  model_service:
+    image: ${CI_REGISTRY}/ainb_24_the_iceberg/titanic_web_service/model_service:${CI_COMMIT_SHA}
+    container_name: model_service
+    networks:
+      - titanic-network
+
+networks:
+  titanic-network:
+      driver: overlay
+  outside:
+      external: true

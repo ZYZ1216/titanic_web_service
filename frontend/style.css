@@ -1,0 +1,36 @@
+#header {
+    overflow: hidden;
+    height: 280px;
+    background: url(cover.jpg) no-repeat;
+    background-attachment: local;
+    background-position: center center;
+    background-size: cover;
+}
+
+* {
+    font-family: "Raleway", sans-serif !important;
+}
+
+.fw-black {
+    font-weight: 900;
+}
+
+.fw-extrabold {
+    font-weight: 800;    
+}
+
+.icon {
+    width: 30px;
+}
+
+header img {
+    user-select: none;
+}
+
+.results-style {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
